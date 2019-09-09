@@ -1,0 +1,36 @@
+const int led_pin =  9;
+int led_state ;
+const int led_pin2=10;
+int led_state2;
+//int button_state = 0;
+
+void setup() {
+  pinMode(led_pin, OUTPUT);
+  pinMode(led_pin2,OUTPUT);
+  Serial.begin(9600);
+
+}
+
+void loop() {
+led_state=Serial.read()+1;
+if(led_state==2){
+  digitalWrite(led_pin,led_state);
+  delay(2000);
+  }
+led_state2=led_state-1;
+digitalWrite(led_pin,led_state);
+digitalWrite(led_pin2,led_state2);
+//sprintf("",Serial.read());
+  //digitalWrite(led_pin,Serial.read()+1);
+  //digitalWrite(led_pin2,Serial.read());
+Serial.println(Serial.read());
+//  if (Serial.read() != 1) {
+//    led_state =1-led_state;
+//    digitalWrite(led_pin, led_state);
+//  }
+//if(Serial.available()!=0){
+//digitalWrite(led_pin,Serial.read());
+//if(Serial.read()==1){delay(5000);}
+//}
+//
+}
